@@ -49,7 +49,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 let isVoicelinePlaying = false;
 
@@ -67,8 +68,8 @@ const AUDIO_DETAIL = [
                 "ここ、すっごく涼しいの！"
             ],
             English: [
-                "Sensei! Over here, over here~!",
-                "It's super cool and shady right here!"
+                "Sensei! Over here!",
+                "This forest feels soooo cool!"
             ],
             Chinese: [
                 "老师！这边这边～！",
@@ -76,12 +77,13 @@ const AUDIO_DETAIL = [
             ],
             TraditionalChinese: [
                 "老師！這邊這邊～！",
-                "這裡超級涼快哦！"
+                "這裡，超～涼快的！"
             ],
             Korean: [
-                "선생님, 여기, 여기!",
-                "여기 엄청 시원해!"
-            ]
+                "선생님! 이쪽이야!",
+                "이 숲, 엄~청 시원해!"
+            ],
+            Thai: ["คุณครู! ทางนี้!","ป่านี้เย็นมากๆ เลย~!"]
         }
     },
     {
@@ -91,21 +93,22 @@ const AUDIO_DETAIL = [
                 "ここなら…ほら、全然暑くないんだよ～！"
             ],
             English: [
-                "No matter how strong the sun shines—",
-                "If we're here... see? It's not hot at all~!"
+                "No matter how bright the sun is...",
+                "Look... The trees cover everything!"
             ],
             Chinese: [
                 "无论阳光有多么刺眼——",
                 "只要在这里……看，就完全不会热了哦～！"
             ],
             TraditionalChinese: [
-                "無論陽光有多麼刺眼——",
-                "只要在這裡……看，就完全不會熱了哦～！"
+                "不管太陽公公的光有多強──",
+                "只要在這裡……你看，一點都不熱唷～！"
             ],
             Korean: [
-                "햇빛이 얼마나 강한지 상관없이",
-                "우리가 여기 있다면... 아뇨, 전혀 뜨겁지 않아요!"
-            ]
+                "아무리 해님이 쨍쨍 내리쬐어도…",
+                "여기라면… 봐봐, 나무들이 전부 가려줘서~!"
+            ],
+            Thai: ["ต่อให้แดดส่องแรงแค่ไหน...","แต่ถ้าเป็นที่นี่ละก็... ดูสิ พวกต้นไม้ ช่วยบังให้หมดเลย~!"]
         }
     },
     {
@@ -115,21 +118,22 @@ const AUDIO_DETAIL = [
                 "もう、パラソル移動しなくてもいいんだよ、先生。"
             ],
             English: [
-                "So you see! If we're here—",
-                "You don't have to keep moving the parasol anymore, Sensei."
+                "So! At this place...",
+                "You don't have to move the parasol, Sensei!"
             ],
             Chinese: [
                 "所以呢！只要在这个地方——",
                 "老师就再也不用搬来搬去移遮阳伞了哦。"
             ],
             TraditionalChinese: [
-                "所以呢！只要在這個地方——",
-                "老師就再也不用搬來搬去移遮陽傘了哦。"
+                "所以呢！在這裡的話──",
+                "就不用再搬陽傘了哦，老師。"
             ],
             Korean: [
-                "보시다시피, 우리가 여기 있다면",
-                "더 이상 낙하산을 움직이지 않아도 되죠"
-            ]
+                "그러니까! 여기서는….",
+                "이제 파라솔 안 옮겨도 괜찮아, 선생님!"
+            ],
+            Thai: ["เพราะงั้น! เมื่ออยู่ที่นี่...","ก็ไม่ต้องย้ายร่มชายหาด แล้วก็ได้ คุณครู!"]
         }
     },
     {
@@ -139,21 +143,22 @@ const AUDIO_DETAIL = [
                 "先生がよいしょ、よいしょって、パラソル運んでるとこ…。"
             ],
             English: [
-                "...Mmh. To be honest, Ibuki was watching you.",
-                "How you kept carrying that parasol around, huffing and puffing..."
+                "...Yes. You know, Ibuki saw it all.",
+                "Sensei was going heave-ho and moving the parasol..."
             ],
             Chinese: [
                 "……嗯。其实呢，伊吹刚才都看到啦。",
                 "看到老师‘哎咻、哎咻’地忙着搬遮阳伞的样子了……"
             ],
             TraditionalChinese: [
-                "……嗯。其實呢，伊吹剛才都看到啦。",
-                "看到老師‘哎咻、哎咻’地忙著搬遮陽傘的樣子了……"
+                "……嗯。其實呢，伊吹都看到了。",
+                "老師嘿咻、嘿咻地搬著陽傘……"
             ],
             Korean: [
-                "솔직히 이부키가 널 지켜봤어",
-                "그 낙하산을 들고 다니면서 푹신하고 푹신하고..."
-            ]
+                "…응, 사실은 있지. 이부키, 전부 봤어.",
+                "선생님이 영차영차 하고, 파라솔 옮기는 거…."
+            ],
+            Thai: ["อืม... จริงๆ แล้ว อิบูกิเห็นหมดเลย","ตอนที่คุณครูออกแรงฮึบๆ แล้วย้ายร่มชายหาดน่ะ..."]
         }
     },
     {
@@ -163,21 +168,22 @@ const AUDIO_DETAIL = [
                 "イブキと一緒に、ゆっくり休もうね！"
             ],
             English: [
-                "But we'll be totally okay here!",
-                "Let's take a nice, long rest together with Ibuki, okay?"
+                "But you don't have to do that here!",
+                "All you need to do is take a nice break with Ibuki!"
             ],
             Chinese: [
                 "不过在这里的话就完全没问题啦！",
                 "和伊吹一起好好地休息一下吧！"
             ],
             TraditionalChinese: [
-                "不過在這裡的話就完全沒問題啦！",
-                "和伊吹一起好好地休息一下吧！"
+                "不過在這裡就沒問題了！",
+                "和伊吹一起，好好休息吧！"
             ],
             Korean: [
-                "하지만 우린 여기서 괜찮을 거야!",
-                "이부키와 함께 긴 휴식을 취하자"
-            ]
+                "하지만 여기선 안 그래도 돼!",
+                "이부키랑 푹! 쉬기만 하면 되는 거야!"
+            ],
+            Thai: ["แต่ที่นี่ไม่ต้องทำแบบนั้นแล้ว!","แค่พักผ่อนกับอิบูกิ ให้เต็มที่ก็พอ!"]
         }
     }
 ];
@@ -303,7 +309,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -479,6 +485,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -492,6 +508,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -501,7 +519,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
